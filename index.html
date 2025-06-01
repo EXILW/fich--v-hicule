@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiche Véhicule</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
+    iframe { width: 100%; height: 90vh; border: none; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; color:#1976D2;">Fiche du Véhicule</h1>
+  <iframe id="fiche" src=""></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const vehicleID = params.get("vehicle_id");
+    if (vehicleID) {
+      const url = "https://script.google.com/macros/s/AKfycbwmIRzN93oRWWGpn_j5zSqjs5QPXBhTCKiT9jDIs4NJnNc945ToSdPs_DBD1gLV487FWQ/exec?vehicle_id=" + encodeURIComponent(vehicleID);https://script.google.com/macros/s/AKfycbwmIRzN93oRWWGpn_j5zSqjs5QPXBhTCKiT9jDIs4NJnNc945ToSdPs_DBD1gLV487FWQ/exec
+      document.getElementById("fiche").src = url;
+    } else {
+      document.getElementById("fiche").outerHTML = "<p style='text-align:center; color:red;'>Aucun identifiant de véhicule fourni</p>";
+    }
+  </script>
+</body>
+</html>
