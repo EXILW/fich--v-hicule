@@ -1,1 +1,19 @@
+[
+  {
+    "Vehicle_ID": "VHL-001",
+    "Immatriculation": "",
+    "Marque": "",
+    "Modèle": "",
+    "Date_entretien": "",
+    "Client": "Bell"
+  },
+  {
+    "Vehicle_ID": "VHL-002",
+    "Immatriculation": "",
+    "Marque": "",
+    "Modèle": "",
+    "Date_entretien": "",
+    "Client": "Hydro"
+  }
+]
 
