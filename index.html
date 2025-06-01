@@ -17,7 +17,7 @@
     const params = new URLSearchParams(window.location.search);
     const vehicleID = params.get("vehicle_id");
     if (vehicleID) {
-      const url = "https://script.google.com/macros/s/AKfycbwmIRzN93oRWWGpn_j5zSqjs5QPXBhTCKiT9jDIs4NJnNc945ToSdPs_DBD1gLV487FWQ/exec?vehicle_id=" + encodeURIComponent(vehicleID);https://script.google.com/macros/s/AKfycbwmIRzN93oRWWGpn_j5zSqjs5QPXBhTCKiT9jDIs4NJnNc945ToSdPs_DBD1gLV487FWQ/exec
+      const url = "https://script.google.com/macros/s/AKfycbwmIRzN93oRWWGpn_j5zSqjs5QPXBhTCKiT9jDIs4NJnNc945ToSdPs_DBD1gLV487FWQ/exec?vehicle_id=" + encodeURIComponent(vehicleID);
       document.getElementById("fiche").src = url;
     } else {
       document.getElementById("fiche").outerHTML = "<p style='text-align:center; color:red;'>Aucun identifiant de véhicule fourni</p>";
