@@ -25,12 +25,20 @@
     const ficheDiv = document.getElementById("fiche");
 
     if (vehicleID) {
-      const url = "https://script.google.com/macros/s/AKfycbwmIRzN93oRWWGpn_j5zSqjs5QPXBhTCKiT9jDIs4NJnNc945ToSdPs_DBD1gLV487FWQ/exec?vehicle_id=" + encodeURIComponent(vehicleID);
-
-      fetch(url)
-        .then(response => response.text())
+      fetch('donnees_vehicules.json')
+        .then(response => response.json())
         .then(data => {
-          ficheDiv.innerHTML = data;
+          const vehicule = data.find(v => v.Vehicle_ID === vehicleID);
+          if (vehicule) {
+            let html = '<ul>';
+            for (const [key, value] of Object.entries(vehicule)) {
+              html += `<li><strong>${key} :</strong> ${value}</li>`;
+            }
+            html += '</ul>';
+            ficheDiv.innerHTML = html;
+          } else {
+            ficheDiv.innerHTML = "<p class='error'>Véhicule non trouvé.</p>";
+          }
         })
         .catch(error => {
           ficheDiv.innerHTML = "<p class='error'>Erreur lors du chargement des données.</p>";
