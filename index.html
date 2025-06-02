@@ -28,11 +28,11 @@
       fetch('https://raw.githubusercontent.com/EXILW/fich--v-hicule/main/donnees_vehicules.json')
         .then(response => response.json())
         .then(data => {
-          const vehicule = data.find(v => v.Vehicle_ID === vehicleID);
+          const vehicule = data.find(v => v["Vehicle ID"] === vehicleID);
           if (vehicule) {
             let html = '<ul>';
             for (const [key, value] of Object.entries(vehicule)) {
-              html += `<li><strong>${key} :</strong> ${value}</li>`;
+              html += `<li><strong>${key} :</strong> ${value || 'Non disponible'}</li>`;
             }
             html += '</ul>';
             ficheDiv.innerHTML = html;
