@@ -24,8 +24,8 @@
     const vehicleID = params.get("vehicle_id");
     const ficheDiv = document.getElementById("fiche");
 
-    if (vehicleID) {
-      fetch('https://raw.githubusercontent.com/EXILW/fich--v-hicule/main/donnees_vehicules.json')
+    if (vehicleID)
+    {fetch('https://exilw.github.io/fich--v-hicule/donnees_vehicules.json')
         .then(response => response.json())
         .then(data => {
           const vehicule = data.find(v => v["Vehicle ID"] === vehicleID);
